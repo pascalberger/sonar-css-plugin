@@ -26,7 +26,7 @@ public class TodoTagCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new TodoTagCheck(), CheckTestUtils.getTestFile("todoTagPresence.css"));
+    CssCheckVerifier.verify(new TodoTagCheck(), CheckTestUtils.getCssTestFile("todoTagPresence.css"));
   }
 
 }

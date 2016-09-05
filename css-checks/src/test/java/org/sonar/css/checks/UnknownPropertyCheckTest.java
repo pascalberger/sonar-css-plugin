@@ -26,7 +26,7 @@ public class UnknownPropertyCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UnknownPropertyCheck(), CheckTestUtils.getTestFile("knownProperty.css"));
+    CssCheckVerifier.verify(new UnknownPropertyCheck(), CheckTestUtils.getCssTestFile("knownProperty.css"));
   }
 
 }

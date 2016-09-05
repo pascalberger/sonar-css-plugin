@@ -26,7 +26,7 @@ public class CaseCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new CaseCheck(), CheckTestUtils.getTestFile("case.css"));
+    CssCheckVerifier.verify(new CaseCheck(), CheckTestUtils.getCssTestFile("case.css"));
   }
 
 }

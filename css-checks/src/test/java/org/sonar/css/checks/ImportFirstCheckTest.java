@@ -26,37 +26,37 @@ public class ImportFirstCheckTest {
 
   @Test
   public void test1() {
-    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getTestFile("import/importFirst1.css"));
+    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getCssTestFile("import/importFirst1.css"));
   }
 
   @Test
   public void test2() {
-    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getTestFile("import/importFirst2.css"));
+    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getCssTestFile("import/importFirst2.css"));
   }
 
   @Test
   public void test3() {
-    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getTestFile("import/importFirst3.css"));
+    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getCssTestFile("import/importFirst3.css"));
   }
 
   @Test
   public void test4() {
-    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getTestFile("import/importFirst4.css"));
+    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getCssTestFile("import/importFirst4.css"));
   }
 
   @Test
   public void test5() {
-    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getTestFile("import/importFirstWithCharset.css"));
+    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getCssTestFile("import/importFirstWithCharset.css"));
   }
 
   @Test
   public void test6() {
-    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getTestFile("import/importNotFirst1.css"));
+    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getCssTestFile("import/importNotFirst1.css"));
   }
 
   @Test
   public void test7() {
-    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getTestFile("import/importNotFirst2.css"));
+    CssCheckVerifier.verify(new ImportFirstCheck(), CheckTestUtils.getCssTestFile("import/importNotFirst2.css"));
   }
 
 }

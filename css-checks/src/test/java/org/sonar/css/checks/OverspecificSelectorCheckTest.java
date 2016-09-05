@@ -28,13 +28,13 @@ public class OverspecificSelectorCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("overspecselector.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("overspecselector.css"));
   }
 
   @Test
   public void test_with_custom_threshold() {
     check.setDeepnessThreshold(5);
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("overspecselectorCustom.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("overspecselectorCustom.css"));
   }
 
 }

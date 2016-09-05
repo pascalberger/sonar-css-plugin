@@ -26,7 +26,7 @@ public class LeadingZeroCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new LeadingZeroCheck(), CheckTestUtils.getTestFile("leadingZeros.css"));
+    CssCheckVerifier.verify(new LeadingZeroCheck(), CheckTestUtils.getCssTestFile("leadingZeros.css"));
   }
 
 }

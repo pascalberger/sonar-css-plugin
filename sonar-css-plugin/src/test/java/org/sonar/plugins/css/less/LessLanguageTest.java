@@ -17,32 +17,36 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.css;
+package org.sonar.plugins.css.less;
 
 import org.junit.Test;
-import org.sonar.api.server.rule.RulesDefinition;
-import org.sonar.check.Rule;
-import org.sonar.css.checks.CheckList;
-import org.sonar.css.checks.TodoTagCheck;
+import org.sonar.api.config.Settings;
 
 import static org.fest.assertions.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 
-public class CssRulesDefinitionTest {
+public class LessLanguageTest {
 
   @Test
-  public void test() {
-    CssRulesDefinition rulesDefinition = new CssRulesDefinition();
-    RulesDefinition.Context context = new RulesDefinition.Context();
-    rulesDefinition.define(context);
-    RulesDefinition.Repository repository = context.repository("css");
+  public void language_key_and_name() {
+    LessLanguage less = new LessLanguage(mock(Settings.class));
+    assertThat(less.getKey()).isEqualTo("less");
+    assertThat(less.getName()).isEqualTo("Less");
+  }
 
-    assertThat(repository.name()).isEqualTo("SonarQube");
-    assertThat(repository.language()).isEqualTo("css");
-    assertThat(repository.rules()).hasSize(CheckList.getChecks().size());
+  @Test
+  public void default_file_suffix() {
+    LessLanguage less = new LessLanguage(mock(Settings.class));
+    assertThat(less.getFileSuffixes()).containsOnly("less");
+  }
 
-    RulesDefinition.Rule todoRule = repository.rule(TodoTagCheck.class.getAnnotation(Rule.class).key());
-    assertThat(todoRule).isNotNull();
-    assertThat(todoRule.name()).isEqualTo(TodoTagCheck.class.getAnnotation(Rule.class).name());
+  @Test
+  public void custom_file_suffixes() {
+    Settings settings = new Settings();
+    settings.setProperty("sonar.less.file.suffixes", "less,less3");
+
+    LessLanguage less = new LessLanguage(settings);
+    assertThat(less.getFileSuffixes()).containsOnly("less", "less3");
   }
 
 }

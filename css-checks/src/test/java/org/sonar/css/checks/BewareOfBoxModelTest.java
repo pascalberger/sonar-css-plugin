@@ -26,7 +26,7 @@ public class BewareOfBoxModelTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new BewareOfBoxModelCheck(), CheckTestUtils.getTestFile("boxSizing.css"));
+    CssCheckVerifier.verify(new BewareOfBoxModelCheck(), CheckTestUtils.getCssTestFile("boxSizing.css"));
   }
 
 }

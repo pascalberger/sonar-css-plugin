@@ -160,7 +160,15 @@ public enum CssLexicalGrammar implements GrammarRuleKey {
   _W,
 
   /* Spacing */
-  SPACING;
+  SPACING,
+
+  /* Less */
+  LESS_VARIABLE_DECLARATION,
+  LESS_VARIABLE,
+  LESS_VARIABLE_PREFIX,
+
+  ;
+
 
   public static LexerlessGrammarBuilder createGrammar() {
     LexerlessGrammarBuilder b = LexerlessGrammarBuilder.create();

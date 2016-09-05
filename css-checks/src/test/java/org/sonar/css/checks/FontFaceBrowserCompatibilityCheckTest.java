@@ -28,21 +28,21 @@ public class FontFaceBrowserCompatibilityCheckTest {
 
   @Test
   public void basic() {
-    CssCheckVerifier.verify(new FontFaceBrowserCompatibilityCheck(), CheckTestUtils.getTestFile("fontface/basic.css"));
+    CssCheckVerifier.verify(new FontFaceBrowserCompatibilityCheck(), CheckTestUtils.getCssTestFile("fontface/basic.css"));
   }
 
   @Test
   public void deep() {
     FontFaceBrowserCompatibilityCheck check = new FontFaceBrowserCompatibilityCheck();
     check.setBrowserSupportLevel("deep");
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("fontface/deep.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("fontface/deep.css"));
   }
 
   @Test
   public void deepest() {
     FontFaceBrowserCompatibilityCheck check = new FontFaceBrowserCompatibilityCheck();
     check.setBrowserSupportLevel("deepest");
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("fontface/deepest.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("fontface/deepest.css"));
   }
 
   @Test
@@ -51,7 +51,7 @@ public class FontFaceBrowserCompatibilityCheckTest {
       FontFaceBrowserCompatibilityCheck check = new FontFaceBrowserCompatibilityCheck();
       check.setBrowserSupportLevel("blabla");
 
-      CssCheckVerifier.issues(check, CheckTestUtils.getTestFile("fontface/deepest.css")).noMore();
+      CssCheckVerifier.issues(check, CheckTestUtils.getCssTestFile("fontface/deepest.css")).noMore();
 
     } catch (IllegalStateException e) {
       assertThat(e.getMessage()).isEqualTo("Check css:font-face-browser-compatibility (\"@font-face\" rule should "

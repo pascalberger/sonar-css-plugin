@@ -26,7 +26,7 @@ public class ImportUsageCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ImportUsageCheck(), CheckTestUtils.getTestFile("import.css"));
+    CssCheckVerifier.verify(new ImportUsageCheck(), CheckTestUtils.getCssTestFile("import.css"));
   }
 
 }

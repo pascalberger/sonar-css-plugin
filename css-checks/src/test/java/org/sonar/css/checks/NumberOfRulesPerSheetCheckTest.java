@@ -28,21 +28,21 @@ public class NumberOfRulesPerSheetCheckTest {
   public void should_contain_more_rules_than_the_allowed_number_and_raise_an_issue() {
     NumberOfRulesPerSheetCheck check = new NumberOfRulesPerSheetCheck();
     check.setMax(9);
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("maximumNumberOfRulesPerSheet9.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("maximumNumberOfRulesPerSheet9.css"));
   }
 
   @Test
   public void should_contain_fewer_rules_than_the_allowed_number_and_not_raise_an_issue() {
     NumberOfRulesPerSheetCheck check = new NumberOfRulesPerSheetCheck();
     check.setMax(11);
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("maximumNumberOfRulesPerSheet11.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("maximumNumberOfRulesPerSheet11.css"));
   }
 
   @Test
   public void should_contain_the_same_number_of_rules_than_the_allowed_number_and_not_raise_an_issue() {
     NumberOfRulesPerSheetCheck check = new NumberOfRulesPerSheetCheck();
     check.setMax(10);
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("maximumNumberOfRulesPerSheet10.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("maximumNumberOfRulesPerSheet10.css"));
   }
 
 }

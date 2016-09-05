@@ -25,15 +25,27 @@ import java.util.Collection;
 
 public final class CheckList {
 
-  public static final String REPOSITORY_KEY = "css";
+  public static final String CSS_REPOSITORY_KEY = "css";
+  public static final String CSS_REPOSITORY_NAME = "SonarQube";
 
-  public static final String REPOSITORY_NAME = "SonarQube";
+  public static final String LESS_REPOSITORY_KEY = "less";
+  public static final String LESS_REPOSITORY_NAME = "SonarQube";
 
   private CheckList() {
   }
 
   @SuppressWarnings("rawtypes")
-  public static Collection<Class> getChecks() {
+  public static Collection<Class> getCssChecks() {
+    return getCommonChecks();
+  }
+
+  @SuppressWarnings("rawtypes")
+  public static Collection<Class> getLessChecks() {
+    return getCommonChecks();
+  }
+
+  @SuppressWarnings("rawtypes")
+  private static Collection<Class> getCommonChecks() {
     return ImmutableList.<Class>of(
       AllGradientDefinitionsCheck.class,
       AlphabetizeDeclarationsCheck.class,

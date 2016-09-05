@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.css;
+package org.sonar.plugins.css.css;
 
 import java.io.File;
 import java.util.Collection;
@@ -43,7 +43,7 @@ import static org.mockito.Mockito.mock;
 
 public class CssSquidSensorTest {
 
-  private final File baseDir = new File("src/test/resources");
+  private final File baseDir = new File("src/test/resources/css");
   private final SensorContextTester context = SensorContextTester.create(baseDir);
   private CheckFactory checkFactory = new CheckFactory(mock(ActiveRules.class));
 
@@ -51,7 +51,7 @@ public class CssSquidSensorTest {
   public void should_create_a_valid_sensor_descriptor() {
     DefaultSensorDescriptor descriptor = new DefaultSensorDescriptor();
     createCssSquidSensor().describe(descriptor);
-    assertThat(descriptor.name()).isEqualTo("CSS Squid Sensor");
+    assertThat(descriptor.name()).isEqualTo("CSS Analyzer");
     assertThat(descriptor.languages()).containsOnly("css");
     assertThat(descriptor.type()).isEqualTo(InputFile.Type.MAIN);
   }
@@ -61,7 +61,7 @@ public class CssSquidSensorTest {
     String relativePath = "measures.css";
     inputFile(relativePath);
     createCssSquidSensor().execute(context);
-    assertMeasures("moduleKey:" + relativePath);
+    assertCssMeasures("moduleKey:" + relativePath);
   }
 
   @Test
@@ -69,10 +69,10 @@ public class CssSquidSensorTest {
     String relativePath = "measuresWithBOM.css";
     inputFile(relativePath);
     createCssSquidSensor().execute(context);
-    assertMeasures("moduleKey:" + relativePath);
+    assertCssMeasures("moduleKey:" + relativePath);
   }
 
-  private void assertMeasures(String key) {
+  private void assertCssMeasures(String key) {
     assertThat(context.measure(key, CoreMetrics.NCLOC).value()).isEqualTo(17);
     assertThat(context.measure(key, CoreMetrics.STATEMENTS).value()).isEqualTo(11);
     assertThat(context.measure(key, CoreMetrics.COMMENT_LINES).value()).isEqualTo(4);
@@ -96,9 +96,9 @@ public class CssSquidSensorTest {
     inputFile(fileName);
 
     ActiveRules activeRules = (new ActiveRulesBuilder())
-      .create(RuleKey.of(CheckList.REPOSITORY_KEY, "S1135"))
+      .create(RuleKey.of(CheckList.CSS_REPOSITORY_KEY, "S1135"))
       .activate()
-      .create(RuleKey.of(CheckList.REPOSITORY_KEY, "important"))
+      .create(RuleKey.of(CheckList.CSS_REPOSITORY_KEY, "important"))
       .activate()
       .build();
     checkFactory = new CheckFactory(activeRules);
@@ -113,7 +113,7 @@ public class CssSquidSensorTest {
     inputFile("parsingError.css");
 
     ActiveRules activeRules = (new ActiveRulesBuilder())
-      .create(RuleKey.of(CheckList.REPOSITORY_KEY, "S2260"))
+      .create(RuleKey.of(CheckList.CSS_REPOSITORY_KEY, "S2260"))
       .activate()
       .build();
 
@@ -153,8 +153,8 @@ public class CssSquidSensorTest {
     assertThat(context.measure("moduleKey:minified/test-min.css", CoreMetrics.NCLOC)).isNull();
   }
 
-  private CssSquidSensor createCssSquidSensor() {
-    return new CssSquidSensor(context.fileSystem(), checkFactory, new NoSonarFilter());
+  private CssAnalyzerSensor createCssSquidSensor() {
+    return new CssAnalyzerSensor(context.fileSystem(), checkFactory, new NoSonarFilter());
   }
 
   private DefaultInputFile inputFile(String relativePath) {

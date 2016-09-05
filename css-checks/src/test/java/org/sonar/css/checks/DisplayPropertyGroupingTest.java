@@ -26,7 +26,7 @@ public class DisplayPropertyGroupingTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new DisplayPropertyGroupingCheck(), CheckTestUtils.getTestFile("displayProperty.css"));
+    CssCheckVerifier.verify(new DisplayPropertyGroupingCheck(), CheckTestUtils.getCssTestFile("displayProperty.css"));
   }
 
 }

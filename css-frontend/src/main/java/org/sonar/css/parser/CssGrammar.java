@@ -167,6 +167,16 @@ public class CssGrammar {
         VALUE()));
   }
 
+  // Less
+  public LessVariableDeclarationTree LESS_VARIABLE_DECLARATION() {
+    return b.<LessVariableDeclarationTree>nonterminal(CssLexicalGrammar.LESS_VARIABLE_DECLARATION).is(
+      f.lessVariableDeclaration(
+        LESS_VARIABLE(),
+        b.token(CssLexicalGrammar.COLON),
+        VALUE(),
+        b.token(CssLexicalGrammar.SEMICOLON)));
+  }
+
   public PropertyTree PROPERTY() {
     return b.<PropertyTree>nonterminal(CssLexicalGrammar.PROPERTY).is(
       f.property(IDENTIFIER()));
@@ -352,6 +362,14 @@ public class CssGrammar {
     return b.<VariableTree>nonterminal(CssLexicalGrammar.VARIABLE).is(
       f.variable(
         b.token(CssLexicalGrammar.VARIABLE_PREFIX),
+        IDENTIFIER_NO_WS()));
+  }
+
+  // Less
+  public LessVariableTree LESS_VARIABLE() {
+    return b.<LessVariableTree>nonterminal(CssLexicalGrammar.LESS_VARIABLE).is(
+      f.lessVariable(
+        b.token(CssLexicalGrammar.LESS_VARIABLE_PREFIX),
         IDENTIFIER_NO_WS()));
   }
 

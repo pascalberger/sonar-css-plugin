@@ -26,7 +26,7 @@ public class CaseInsensitiveFlagCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new CaseInsensitiveFlagCheck(), CheckTestUtils.getTestFile("caseInsensitiveFlag.css"));
+    CssCheckVerifier.verify(new CaseInsensitiveFlagCheck(), CheckTestUtils.getCssTestFile("caseInsensitiveFlag.css"));
   }
 
 }

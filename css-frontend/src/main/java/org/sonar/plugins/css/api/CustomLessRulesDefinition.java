@@ -17,30 +17,30 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.css;
+package org.sonar.plugins.css.api;
 
-import org.apache.commons.lang.StringUtils;
-import org.sonar.api.config.Settings;
-import org.sonar.api.resources.AbstractLanguage;
+import com.google.common.collect.ImmutableList;
+import org.sonar.api.ExtensionPoint;
+import org.sonar.api.batch.BatchSide;
+import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
 
-public class CssLanguage extends AbstractLanguage {
+/**
+ * Extension point to create custom rule repository for Less.
+ */
+@ExtensionPoint
+@BatchSide
+public abstract class CustomLessRulesDefinition extends CustomRulesDefinition {
 
-  public static final String KEY = "css";
-
-  private final Settings settings;
-
-  public CssLanguage(Settings settings) {
-    super(KEY, "CSS");
-    this.settings = settings;
-  }
-
+  /**
+   * Defines rule repository with check metadata from check classes' annotations.
+   * This method should be overridden if check metadata are provided via another format,
+   * e.g: XMl, JSON.
+   */
   @Override
-  public String[] getFileSuffixes() {
-    String[] suffixes = settings.getStringArray(CssPlugin.FILE_SUFFIXES_KEY);
-    if (suffixes == null || suffixes.length == 0) {
-      suffixes = StringUtils.split(CssPlugin.FILE_SUFFIXES_DEFAULT_VALUE, ",");
-    }
-    return suffixes;
+  public void define(Context context) {
+    NewRepository repo = context.createRepository(repositoryKey(), "less").setName(repositoryName());
+    new AnnotationBasedRulesDefinition(repo, "less").addRuleClasses(false, ImmutableList.copyOf(checkClasses()));
+    repo.done();
   }
 
 }

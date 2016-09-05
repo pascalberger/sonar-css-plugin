@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.css;
+package org.sonar.plugins.css.css;
 
 import org.sonar.api.profiles.ProfileDefinition;
 import org.sonar.api.profiles.RulesProfile;
@@ -40,10 +40,10 @@ public class CssProfile extends ProfileDefinition {
   public RulesProfile createProfile(ValidationMessages messages) {
     AnnotationBasedProfileBuilder annotationBasedProfileBuilder = new AnnotationBasedProfileBuilder(ruleFinder);
     return annotationBasedProfileBuilder.build(
-      CheckList.REPOSITORY_KEY,
+      CheckList.CSS_REPOSITORY_KEY,
       SONARQUBE_WAY_PROFILE_NAME,
       CssLanguage.KEY,
-      CheckList.getChecks(),
+      CheckList.getCssChecks(),
       messages);
   }
 

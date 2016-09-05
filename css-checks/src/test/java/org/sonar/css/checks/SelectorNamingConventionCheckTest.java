@@ -31,13 +31,13 @@ public class SelectorNamingConventionCheckTest {
   @Test
   public void test_with_default_format() {
     check.setFormat("^[a-z][-a-z0-9]*$");
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("selectorNamingConvention.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("selectorNamingConvention.css"));
   }
 
   @Test
   public void test_with_custom_format() {
     check.setFormat("^[-a-z]+$");
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("selectorNamingConventionCustomFormat.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("selectorNamingConventionCustomFormat.css"));
   }
 
   @Test
@@ -45,7 +45,7 @@ public class SelectorNamingConventionCheckTest {
     try {
       check.setFormat("(");
 
-      CssCheckVerifier.issues(check, CheckTestUtils.getTestFile("selectorNamingConvention.css")).noMore();
+      CssCheckVerifier.issues(check, CheckTestUtils.getCssTestFile("selectorNamingConvention.css")).noMore();
 
     } catch (IllegalStateException e) {
       assertThat(e.getMessage()).isEqualTo("Check css:selector-naming-convention (Selectors should follow a naming convention): "

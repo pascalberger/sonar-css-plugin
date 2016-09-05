@@ -26,7 +26,7 @@ public class ExperimentalFunctionCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ExperimentalFunctionCheck(), CheckTestUtils.getTestFile("experimentalFunctionUsage.css"));
+    CssCheckVerifier.verify(new ExperimentalFunctionCheck(), CheckTestUtils.getCssTestFile("experimentalFunctionUsage.css"));
   }
 
 }

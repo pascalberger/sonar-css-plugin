@@ -26,7 +26,7 @@ public class UnknownFunctionCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UnknownFunctionCheck(), CheckTestUtils.getTestFile("unknownFunctions.css"));
+    CssCheckVerifier.verify(new UnknownFunctionCheck(), CheckTestUtils.getCssTestFile("unknownFunctions.css"));
   }
 
 }

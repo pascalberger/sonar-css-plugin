@@ -26,7 +26,7 @@ public class InliningFontFileCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new InliningFontFileCheck(), CheckTestUtils.getTestFile("inliningFontFiles.css"));
+    CssCheckVerifier.verify(new InliningFontFileCheck(), CheckTestUtils.getCssTestFile("inliningFontFiles.css"));
   }
 
 }

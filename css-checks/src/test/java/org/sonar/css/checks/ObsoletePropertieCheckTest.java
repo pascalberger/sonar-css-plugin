@@ -26,7 +26,7 @@ public class ObsoletePropertieCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ObsoletePropertieCheck(), CheckTestUtils.getTestFile("obsoleteProperties.css"));
+    CssCheckVerifier.verify(new ObsoletePropertieCheck(), CheckTestUtils.getCssTestFile("obsoleteProperties.css"));
   }
 
 }

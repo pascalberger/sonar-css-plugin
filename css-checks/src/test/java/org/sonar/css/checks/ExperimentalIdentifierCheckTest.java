@@ -26,7 +26,7 @@ public class ExperimentalIdentifierCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ExperimentalIdentifierCheck(), CheckTestUtils.getTestFile("experimentalIdentifierUsage.css"));
+    CssCheckVerifier.verify(new ExperimentalIdentifierCheck(), CheckTestUtils.getCssTestFile("experimentalIdentifierUsage.css"));
   }
 
 }

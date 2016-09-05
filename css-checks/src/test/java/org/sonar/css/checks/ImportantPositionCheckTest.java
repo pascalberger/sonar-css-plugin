@@ -26,7 +26,7 @@ public class ImportantPositionCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ImportantPositionCheck(), CheckTestUtils.getTestFile("importantPosition.css"));
+    CssCheckVerifier.verify(new ImportantPositionCheck(), CheckTestUtils.getCssTestFile("importantPosition.css"));
   }
 
 }

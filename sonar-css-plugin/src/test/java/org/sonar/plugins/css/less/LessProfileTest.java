@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.css;
+package org.sonar.plugins.css.less;
 
 import org.junit.Test;
 import org.sonar.api.profiles.RulesProfile;
@@ -31,17 +31,17 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class CssProfileTest {
+public class LessProfileTest {
 
   @Test
   public void should_create_sonarqube_way_profile() {
     ValidationMessages validation = ValidationMessages.create();
-    CssProfile definition = new CssProfile(universalRuleFinder());
+    LessProfile definition = new LessProfile(universalRuleFinder());
     RulesProfile profile = definition.createProfile(validation);
 
-    assertThat(profile.getName()).isEqualTo(CssProfile.SONARQUBE_WAY_PROFILE_NAME);
-    assertThat(profile.getLanguage()).isEqualTo(CssLanguage.KEY);
-    assertThat(profile.getActiveRulesByRepository(CheckList.REPOSITORY_KEY)).hasSize(54);
+    assertThat(profile.getName()).isEqualTo(LessProfile.SONARQUBE_WAY_PROFILE_NAME);
+    assertThat(profile.getLanguage()).isEqualTo(LessLanguage.KEY);
+    assertThat(profile.getActiveRulesByRepository(CheckList.LESS_REPOSITORY_KEY)).hasSize(54);
     assertThat(validation.hasErrors()).isFalse();
   }
 

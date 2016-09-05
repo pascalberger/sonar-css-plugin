@@ -26,12 +26,12 @@ public class SelectorLikeRegExCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new SelectorLikeRegExCheck(), CheckTestUtils.getTestFile("regexlikeselectors.css"));
+    CssCheckVerifier.verify(new SelectorLikeRegExCheck(), CheckTestUtils.getCssTestFile("regexlikeselectors.css"));
   }
 
   @Test
   public void test_with_bom() {
-    CssCheckVerifier.verify(new SelectorLikeRegExCheck(), CheckTestUtils.getTestFile("regexlikeselectorsStartingWithBOM.css"));
+    CssCheckVerifier.verify(new SelectorLikeRegExCheck(), CheckTestUtils.getCssTestFile("regexlikeselectorsStartingWithBOM.css"));
   }
 
 }

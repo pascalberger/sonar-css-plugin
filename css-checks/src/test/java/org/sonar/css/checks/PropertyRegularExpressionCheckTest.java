@@ -28,7 +28,7 @@ import static org.fest.assertions.Assertions.assertThat;
 
 public class PropertyRegularExpressionCheckTest {
 
-  private static final File FILE = CheckTestUtils.getTestFile("commentRegularExpression.css");
+  private static final File FILE = CheckTestUtils.getCssTestFile("commentRegularExpression.css");
   private final PropertyRegularExpressionCheck check = new PropertyRegularExpressionCheck();
 
   @Test

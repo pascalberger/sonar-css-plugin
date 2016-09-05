@@ -26,7 +26,7 @@ public class ObsoleteFunctionCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ObsoleteFunctionCheck(), CheckTestUtils.getTestFile("obsoleteFunctions.css"));
+    CssCheckVerifier.verify(new ObsoleteFunctionCheck(), CheckTestUtils.getCssTestFile("obsoleteFunctions.css"));
   }
 
 }

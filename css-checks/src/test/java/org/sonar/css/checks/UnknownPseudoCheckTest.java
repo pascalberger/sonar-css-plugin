@@ -26,7 +26,7 @@ public class UnknownPseudoCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UnknownPseudoCheck(), CheckTestUtils.getTestFile("unknownPseudos.css"));
+    CssCheckVerifier.verify(new UnknownPseudoCheck(), CheckTestUtils.getCssTestFile("unknownPseudos.css"));
   }
 
 }

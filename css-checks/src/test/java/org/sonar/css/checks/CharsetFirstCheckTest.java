@@ -26,17 +26,17 @@ public class CharsetFirstCheckTest {
 
   @Test
   public void test_charset_first() {
-    CssCheckVerifier.verify(new CharsetFirstCheck(), CheckTestUtils.getTestFile("charset/charsetFirst.css"));
+    CssCheckVerifier.verify(new CharsetFirstCheck(), CheckTestUtils.getCssTestFile("charset/charsetFirst.css"));
   }
 
   @Test
   public void test_charset_not_first() {
-    CssCheckVerifier.verify(new CharsetFirstCheck(), CheckTestUtils.getTestFile("charset/charsetNotFirst.css"));
+    CssCheckVerifier.verify(new CharsetFirstCheck(), CheckTestUtils.getCssTestFile("charset/charsetNotFirst.css"));
   }
 
   @Test
   public void test_charset_first_with_BOM() {
-    CssCheckVerifier.verify(new CharsetFirstCheck(), CheckTestUtils.getTestFile("charset/charsetFirstWithBOM.css"));
+    CssCheckVerifier.verify(new CharsetFirstCheck(), CheckTestUtils.getCssTestFile("charset/charsetFirstWithBOM.css"));
   }
 
 }

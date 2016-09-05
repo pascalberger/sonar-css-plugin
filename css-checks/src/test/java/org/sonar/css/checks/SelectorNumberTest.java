@@ -26,7 +26,7 @@ public class SelectorNumberTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new SelectorNumberCheck(), CheckTestUtils.getTestFile("S2732.css"));
+    CssCheckVerifier.verify(new SelectorNumberCheck(), CheckTestUtils.getCssTestFile("S2732.css"));
   }
 
 }

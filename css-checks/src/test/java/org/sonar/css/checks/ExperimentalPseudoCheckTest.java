@@ -26,7 +26,7 @@ public class ExperimentalPseudoCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ExperimentalPseudoCheck(), CheckTestUtils.getTestFile("experimentalPseudoUsage.css"));
+    CssCheckVerifier.verify(new ExperimentalPseudoCheck(), CheckTestUtils.getCssTestFile("experimentalPseudoUsage.css"));
   }
 
 }

@@ -26,7 +26,7 @@ public class SemicolonDeclarationCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new SemicolonDeclarationCheck(), CheckTestUtils.getTestFile("semicolonDeclaration.css"));
+    CssCheckVerifier.verify(new SemicolonDeclarationCheck(), CheckTestUtils.getCssTestFile("semicolonDeclaration.css"));
   }
 
 }

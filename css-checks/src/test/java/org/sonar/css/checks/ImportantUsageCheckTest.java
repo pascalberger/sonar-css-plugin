@@ -26,7 +26,7 @@ public class ImportantUsageCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ImportantUsageCheck(), CheckTestUtils.getTestFile("important.css"));
+    CssCheckVerifier.verify(new ImportantUsageCheck(), CheckTestUtils.getCssTestFile("important.css"));
   }
 
 }

@@ -26,8 +26,12 @@ public class CheckTestUtils {
   private CheckTestUtils() {
   }
 
-  public static File getTestFile(String relativePath) {
-    return new File("src/test/resources/checks/" + relativePath);
+  public static File getCssTestFile(String relativePath) {
+    return new File("src/test/resources/checks/css/" + relativePath);
+  }
+
+  public static File getLessTestFile(String relativePath) {
+    return new File("src/test/resources/checks/less/" + relativePath);
   }
 
 }

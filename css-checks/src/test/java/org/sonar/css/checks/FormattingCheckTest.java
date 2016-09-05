@@ -26,17 +26,17 @@ public class FormattingCheckTest {
 
   @Test
   public void block() {
-    CssCheckVerifier.verify(new FormattingCheck(), CheckTestUtils.getTestFile("formatting/block.css"));
+    CssCheckVerifier.verify(new FormattingCheck(), CheckTestUtils.getCssTestFile("formatting/block.css"));
   }
 
   @Test
   public void declaration() {
-    CssCheckVerifier.verify(new FormattingCheck(), CheckTestUtils.getTestFile("formatting/declaration.css"));
+    CssCheckVerifier.verify(new FormattingCheck(), CheckTestUtils.getCssTestFile("formatting/declaration.css"));
   }
 
   @Test
   public void important() {
-    CssCheckVerifier.verify(new FormattingCheck(), CheckTestUtils.getTestFile("formatting/important.css"));
+    CssCheckVerifier.verify(new FormattingCheck(), CheckTestUtils.getCssTestFile("formatting/important.css"));
   }
 
 }

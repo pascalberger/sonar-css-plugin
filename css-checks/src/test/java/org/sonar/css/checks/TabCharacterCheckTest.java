@@ -28,12 +28,12 @@ public class TabCharacterCheckTest {
 
   @Test
   public void should_find_tab_characters_and_raise_an_issue() {
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("tabcharacter.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("tabcharacter.css"));
   }
 
   @Test
   public void should_not_find_tab_characters_and_not_raise_an_issue() {
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("notabcharacter.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("notabcharacter.css"));
   }
 
 }

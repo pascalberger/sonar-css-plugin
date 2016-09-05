@@ -26,7 +26,7 @@ public class ExperimentalPropertyCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ExperimentalPropertyCheck(), CheckTestUtils.getTestFile("experimentalPropertyUsage.css"));
+    CssCheckVerifier.verify(new ExperimentalPropertyCheck(), CheckTestUtils.getCssTestFile("experimentalPropertyUsage.css"));
   }
 
 }

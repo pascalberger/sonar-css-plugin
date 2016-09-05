@@ -26,7 +26,7 @@ public class VendorPrefixWithStandardCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new VendorPrefixWithStandardCheck(), CheckTestUtils.getTestFile("vendorprefixwithstandard.css"));
+    CssCheckVerifier.verify(new VendorPrefixWithStandardCheck(), CheckTestUtils.getCssTestFile("vendorprefixwithstandard.css"));
   }
 
 }

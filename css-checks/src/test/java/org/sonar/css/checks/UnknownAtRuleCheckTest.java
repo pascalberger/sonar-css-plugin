@@ -26,7 +26,7 @@ public class UnknownAtRuleCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UnknownAtRuleCheck(), CheckTestUtils.getTestFile("unknownAtRules.css"));
+    CssCheckVerifier.verify(new UnknownAtRuleCheck(), CheckTestUtils.getCssTestFile("unknownAtRules.css"));
   }
 
 }

@@ -17,31 +17,22 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.css;
+package org.sonar.plugins.css.css;
 
-import com.google.common.io.Files;
+import org.sonar.api.server.rule.RulesDefinition;
+import org.sonar.css.checks.CheckList;
+import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
+public class CssRulesDefinition implements RulesDefinition {
 
-public class FileUtils {
+  @Override
+  public void define(Context context) {
+    NewRepository repository = context
+      .createRepository(CheckList.CSS_REPOSITORY_KEY, CssLanguage.KEY)
+      .setName(CheckList.CSS_REPOSITORY_NAME);
 
-  private FileUtils() {
-  }
-
-  public static boolean startsWithBOM(File file, Charset charset) {
-    return fileContent(file, charset).startsWith(Character.toString('\uFEFF'));
-  }
-
-  public static String fileContent(File file, Charset charset) {
-    String fileContent;
-    try {
-      fileContent = Files.toString(file, charset);
-    } catch (IOException e) {
-      throw new IllegalStateException("Could not read " + file, e);
-    }
-    return fileContent;
+    new AnnotationBasedRulesDefinition(repository, CssLanguage.KEY).addRuleClasses(false, CheckList.getCssChecks());
+    repository.done();
   }
 
 }

@@ -26,7 +26,7 @@ public class CompatibleVendorPrefixesCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new CompatibleVendorPrefixesCheck(), CheckTestUtils.getTestFile("vendorprefixes.css"));
+    CssCheckVerifier.verify(new CompatibleVendorPrefixesCheck(), CheckTestUtils.getCssTestFile("vendorprefixes.css"));
   }
 
 }

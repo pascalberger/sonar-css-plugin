@@ -31,7 +31,7 @@ import org.sonar.api.batch.rule.CheckFactory;
 import org.sonar.api.batch.rule.Checks;
 import org.sonar.api.rule.RuleKey;
 import org.sonar.plugins.css.api.CssCheck;
-import org.sonar.plugins.css.api.CustomCssRulesDefinition;
+import org.sonar.plugins.css.api.CustomRulesDefinition;
 import org.sonar.plugins.css.api.visitors.TreeVisitor;
 
 public class CssChecks {
@@ -55,10 +55,10 @@ public class CssChecks {
     return this;
   }
 
-  public CssChecks addCustomChecks(@Nullable CustomCssRulesDefinition[] customRulesDefinitions) {
+  public CssChecks addCustomChecks(@Nullable CustomRulesDefinition[] customRulesDefinitions) {
     if (customRulesDefinitions != null) {
 
-      for (CustomCssRulesDefinition rulesDefinition : customRulesDefinitions) {
+      for (CustomRulesDefinition rulesDefinition : customRulesDefinitions) {
         addChecks(rulesDefinition.repositoryKey(), Lists.newArrayList(rulesDefinition.checkClasses()));
       }
     }

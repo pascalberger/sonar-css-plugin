@@ -28,7 +28,7 @@ import static org.fest.assertions.Assertions.assertThat;
 
 public class CommentRegularExpressionCheckTest {
 
-  private static final File FILE = CheckTestUtils.getTestFile("commentRegularExpression.css");
+  private static final File FILE = CheckTestUtils.getCssTestFile("commentRegularExpression.css");
   private final CommentRegularExpressionCheck check = new CommentRegularExpressionCheck();
 
   @Test

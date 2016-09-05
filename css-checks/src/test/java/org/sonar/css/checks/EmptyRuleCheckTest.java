@@ -26,7 +26,7 @@ public class EmptyRuleCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new EmptyRuleCheck(), CheckTestUtils.getTestFile("emptyRule.css"));
+    CssCheckVerifier.verify(new EmptyRuleCheck(), CheckTestUtils.getCssTestFile("emptyRule.css"));
   }
 
 }

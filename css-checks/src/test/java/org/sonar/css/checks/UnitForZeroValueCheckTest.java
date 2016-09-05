@@ -26,7 +26,7 @@ public class UnitForZeroValueCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UnitForZeroValueCheck(), CheckTestUtils.getTestFile("zerounits.css"));
+    CssCheckVerifier.verify(new UnitForZeroValueCheck(), CheckTestUtils.getCssTestFile("zerounits.css"));
   }
 
 }

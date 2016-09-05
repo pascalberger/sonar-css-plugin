@@ -26,7 +26,7 @@ public class UseShorthandPropertyCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UseShorthandPropertyCheck(), CheckTestUtils.getTestFile("shorthand.css"));
+    CssCheckVerifier.verify(new UseShorthandPropertyCheck(), CheckTestUtils.getCssTestFile("shorthand.css"));
   }
 
 }

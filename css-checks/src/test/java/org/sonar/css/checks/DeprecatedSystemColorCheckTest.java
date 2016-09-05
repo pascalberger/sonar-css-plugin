@@ -26,7 +26,7 @@ public class DeprecatedSystemColorCheckTest {
 
   @Test
   public void should_contain_deprecated_system_colors_and_raise_issues() {
-    CssCheckVerifier.verify(new DeprecatedSystemColorCheck(), CheckTestUtils.getTestFile("deprecatedSystemColors.css"));
+    CssCheckVerifier.verify(new DeprecatedSystemColorCheck(), CheckTestUtils.getCssTestFile("deprecatedSystemColors.css"));
   }
 
 }

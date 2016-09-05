@@ -26,7 +26,7 @@ public class DuplicateBackgroundImagesCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new DuplicateBackgroundImagesCheck(), CheckTestUtils.getTestFile("duplicatebackgroundimages.css"));
+    CssCheckVerifier.verify(new DuplicateBackgroundImagesCheck(), CheckTestUtils.getCssTestFile("duplicatebackgroundimages.css"));
   }
 
 }

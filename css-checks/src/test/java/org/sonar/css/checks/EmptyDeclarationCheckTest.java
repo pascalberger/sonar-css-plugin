@@ -26,7 +26,7 @@ public class EmptyDeclarationCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new EmptyDeclarationCheck(), CheckTestUtils.getTestFile("emptyDeclaration.css"));
+    CssCheckVerifier.verify(new EmptyDeclarationCheck(), CheckTestUtils.getCssTestFile("emptyDeclaration.css"));
   }
 
 }

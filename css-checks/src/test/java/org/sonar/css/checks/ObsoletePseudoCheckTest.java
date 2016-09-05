@@ -26,7 +26,7 @@ public class ObsoletePseudoCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ObsoletePseudoCheck(), CheckTestUtils.getTestFile("obsoletePseudos.css"));
+    CssCheckVerifier.verify(new ObsoletePseudoCheck(), CheckTestUtils.getCssTestFile("obsoletePseudos.css"));
   }
 
 }

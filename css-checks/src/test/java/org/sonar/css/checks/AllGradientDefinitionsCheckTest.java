@@ -26,7 +26,7 @@ public class AllGradientDefinitionsCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new AllGradientDefinitionsCheck(), CheckTestUtils.getTestFile("gradientdefinition.css"));
+    CssCheckVerifier.verify(new AllGradientDefinitionsCheck(), CheckTestUtils.getCssTestFile("gradientdefinition.css"));
   }
 
 }

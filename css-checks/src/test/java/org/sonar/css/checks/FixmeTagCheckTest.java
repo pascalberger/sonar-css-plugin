@@ -26,7 +26,7 @@ public class FixmeTagCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new FixmeTagCheck(), CheckTestUtils.getTestFile("fixmeTagPresence.css"));
+    CssCheckVerifier.verify(new FixmeTagCheck(), CheckTestUtils.getCssTestFile("fixmeTagPresence.css"));
   }
 
 }

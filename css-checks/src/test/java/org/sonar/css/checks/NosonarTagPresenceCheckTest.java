@@ -26,7 +26,7 @@ public class NosonarTagPresenceCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new NoSonarTagPresenceCheck(), CheckTestUtils.getTestFile("nosonarTagPresence.css"));
+    CssCheckVerifier.verify(new NoSonarTagPresenceCheck(), CheckTestUtils.getCssTestFile("nosonarTagPresence.css"));
   }
 
 }

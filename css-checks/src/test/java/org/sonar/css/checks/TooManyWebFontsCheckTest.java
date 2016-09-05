@@ -28,7 +28,7 @@ public class TooManyWebFontsCheckTest {
   public void test() {
     TooManyWebFontsCheck check = new TooManyWebFontsCheck();
     check.setFontFaceThreshold(3);
-    CssCheckVerifier.verify(check, CheckTestUtils.getTestFile("toomanywebfonts.css"));
+    CssCheckVerifier.verify(check, CheckTestUtils.getCssTestFile("toomanywebfonts.css"));
   }
 
 }

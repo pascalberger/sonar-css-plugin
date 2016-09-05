@@ -26,7 +26,7 @@ public class UniversalSelectorCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UniversalSelectorCheck(), CheckTestUtils.getTestFile("universalselector.css"));
+    CssCheckVerifier.verify(new UniversalSelectorCheck(), CheckTestUtils.getCssTestFile("universalselector.css"));
   }
 
 }

@@ -26,7 +26,7 @@ public class AlphabetizeDeclarationsCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new AlphabetizeDeclarationsCheck(), CheckTestUtils.getTestFile("alphabetizeDeclarations.css"));
+    CssCheckVerifier.verify(new AlphabetizeDeclarationsCheck(), CheckTestUtils.getCssTestFile("alphabetizeDeclarations.css"));
   }
 
 }

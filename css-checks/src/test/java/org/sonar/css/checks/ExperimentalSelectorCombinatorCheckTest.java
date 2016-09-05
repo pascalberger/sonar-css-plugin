@@ -26,7 +26,7 @@ public class ExperimentalSelectorCombinatorCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ExperimentalSelectorCombinatorCheck(), CheckTestUtils.getTestFile("experimentalSelectorCombinatorUsage.css"));
+    CssCheckVerifier.verify(new ExperimentalSelectorCombinatorCheck(), CheckTestUtils.getCssTestFile("experimentalSelectorCombinatorUsage.css"));
   }
 
 }

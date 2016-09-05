@@ -26,7 +26,7 @@ public class OneDeclarationPerLineCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new OneDeclarationPerLineCheck(), CheckTestUtils.getTestFile("oneDeclarationPerLine.css"));
+    CssCheckVerifier.verify(new OneDeclarationPerLineCheck(), CheckTestUtils.getCssTestFile("oneDeclarationPerLine.css"));
   }
 
 }

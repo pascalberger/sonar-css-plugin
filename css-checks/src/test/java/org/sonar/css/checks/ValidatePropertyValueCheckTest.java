@@ -29,7 +29,7 @@ import org.sonar.css.checks.verifier.CssCheckVerifier;
 
 public class ValidatePropertyValueCheckTest {
 
-  private static final File TEST_DIRECTORY = new File("src/test/resources/checks/properties");
+  private static final File TEST_DIRECTORY = CheckTestUtils.getCssTestFile("properties");
 
   @Test
   public void test_validate_properties() {

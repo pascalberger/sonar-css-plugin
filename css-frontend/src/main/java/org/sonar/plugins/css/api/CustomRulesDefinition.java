@@ -17,8 +17,25 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-@ParametersAreNonnullByDefault
-package org.sonar.css;
+package org.sonar.plugins.css.api;
 
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.sonar.api.server.rule.RulesDefinition;
 
+public abstract class CustomRulesDefinition implements RulesDefinition {
+
+  /**
+   * Name of the custom rule repository.
+   */
+  public abstract String repositoryName();
+
+  /**
+   * Key of the custom rule repository.
+   */
+  public abstract String repositoryKey();
+
+  /**
+   * Array of the custom rules classes.
+   */
+  public abstract Class[] checkClasses();
+
+}

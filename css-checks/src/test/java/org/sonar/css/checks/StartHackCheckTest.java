@@ -26,7 +26,7 @@ public class StartHackCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new StarHackCheck(), CheckTestUtils.getTestFile("starhack.css"));
+    CssCheckVerifier.verify(new StarHackCheck(), CheckTestUtils.getCssTestFile("starhack.css"));
   }
 
 }

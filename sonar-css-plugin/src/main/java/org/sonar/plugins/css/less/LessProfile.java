@@ -17,22 +17,34 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.css;
+package org.sonar.plugins.css.less;
 
-import org.sonar.api.server.rule.RulesDefinition;
+import org.sonar.api.profiles.ProfileDefinition;
+import org.sonar.api.profiles.RulesProfile;
+import org.sonar.api.rules.RuleFinder;
+import org.sonar.api.utils.ValidationMessages;
 import org.sonar.css.checks.CheckList;
-import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
+import org.sonar.squidbridge.annotations.AnnotationBasedProfileBuilder;
 
-public class CssRulesDefinition implements RulesDefinition {
+public class LessProfile extends ProfileDefinition {
+
+  private final RuleFinder ruleFinder;
+
+  public static final String SONARQUBE_WAY_PROFILE_NAME = "SonarQube Way";
+
+  public LessProfile(RuleFinder ruleFinder) {
+    this.ruleFinder = ruleFinder;
+  }
 
   @Override
-  public void define(Context context) {
-    NewRepository repository = context
-      .createRepository(CheckList.REPOSITORY_KEY, CssLanguage.KEY)
-      .setName(CheckList.REPOSITORY_NAME);
-
-    new AnnotationBasedRulesDefinition(repository, CssLanguage.KEY).addRuleClasses(false, CheckList.getChecks());
-    repository.done();
+  public RulesProfile createProfile(ValidationMessages messages) {
+    AnnotationBasedProfileBuilder annotationBasedProfileBuilder = new AnnotationBasedProfileBuilder(ruleFinder);
+    return annotationBasedProfileBuilder.build(
+      CheckList.LESS_REPOSITORY_KEY,
+      SONARQUBE_WAY_PROFILE_NAME,
+      LessLanguage.KEY,
+      CheckList.getLessChecks(),
+      messages);
   }
 
 }

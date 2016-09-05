@@ -26,7 +26,7 @@ public class OverqualifiedElementCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new OverqualifiedElementCheck(), CheckTestUtils.getTestFile("overqualified.css"));
+    CssCheckVerifier.verify(new OverqualifiedElementCheck(), CheckTestUtils.getCssTestFile("overqualified.css"));
   }
 
 }

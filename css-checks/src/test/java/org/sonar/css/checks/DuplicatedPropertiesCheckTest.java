@@ -26,7 +26,7 @@ public class DuplicatedPropertiesCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new DuplicatedPropertiesCheck(), CheckTestUtils.getTestFile("duplicatedProperties.css"));
+    CssCheckVerifier.verify(new DuplicatedPropertiesCheck(), CheckTestUtils.getCssTestFile("duplicatedProperties.css"));
   }
 
 }

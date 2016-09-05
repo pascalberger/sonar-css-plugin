@@ -26,7 +26,7 @@ public class UnderscoreHackCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new UnderscoreHackCheck(), CheckTestUtils.getTestFile("underscorehack.css"));
+    CssCheckVerifier.verify(new UnderscoreHackCheck(), CheckTestUtils.getCssTestFile("underscorehack.css"));
   }
 
 }

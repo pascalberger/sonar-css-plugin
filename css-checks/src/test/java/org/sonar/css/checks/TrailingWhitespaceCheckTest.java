@@ -26,7 +26,7 @@ public class TrailingWhitespaceCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new TrailingWhitespaceCheck(), CheckTestUtils.getTestFile("trailingWhitespace.css"));
+    CssCheckVerifier.verify(new TrailingWhitespaceCheck(), CheckTestUtils.getCssTestFile("trailingWhitespace.css"));
   }
 
 }

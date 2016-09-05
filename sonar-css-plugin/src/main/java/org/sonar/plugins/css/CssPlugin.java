@@ -22,13 +22,29 @@ package org.sonar.plugins.css;
 import org.sonar.api.Plugin;
 import org.sonar.api.Properties;
 import org.sonar.api.Property;
+import org.sonar.plugins.css.css.CssLanguage;
+import org.sonar.plugins.css.css.CssProfile;
+import org.sonar.plugins.css.css.CssRulesDefinition;
+import org.sonar.plugins.css.css.CssAnalyzerSensor;
+import org.sonar.plugins.css.less.LessLanguage;
+import org.sonar.plugins.css.less.LessProfile;
+import org.sonar.plugins.css.less.LessRulesDefinition;
+import org.sonar.plugins.css.less.LessAnalyzerSensor;
 
 @Properties({
   @Property(
-    key = CssPlugin.FILE_SUFFIXES_KEY,
-    defaultValue = CssPlugin.FILE_SUFFIXES_DEFAULT_VALUE,
-    name = "File Suffixes",
-    description = "Comma-separated list of suffixes for files to analyze. To not filter, leave the list empty.",
+    key = CssPlugin.CSS_FILE_SUFFIXES_KEY,
+    category = "CSS",
+    defaultValue = CssPlugin.CSS_FILE_SUFFIXES_DEFAULT_VALUE,
+    name = "Css File Suffixes",
+    description = "Comma-separated list of suffixes for CSS files to analyze.",
+    global = true, project = true),
+  @Property(
+    key = CssPlugin.LESS_FILE_SUFFIXES_KEY,
+    category = "Less",
+    defaultValue = CssPlugin.LESS_FILE_SUFFIXES_DEFAULT_VALUE,
+    name = "Less File Suffixes",
+    description = "Comma-separated list of suffixes for Less files to analyze.",
     global = true, project = true),
   @Property(
     key = "sonar.cpd.css.minimumTokens",
@@ -39,16 +55,23 @@ import org.sonar.api.Property;
 })
 public class CssPlugin implements Plugin {
 
-  public static final String FILE_SUFFIXES_KEY = "sonar.css.file.suffixes";
-  public static final String FILE_SUFFIXES_DEFAULT_VALUE = "css";
+  public static final String CSS_FILE_SUFFIXES_KEY = "sonar.css.file.suffixes";
+  public static final String CSS_FILE_SUFFIXES_DEFAULT_VALUE = "css";
+
+  public static final String LESS_FILE_SUFFIXES_KEY = "sonar.less.file.suffixes";
+  public static final String LESS_FILE_SUFFIXES_DEFAULT_VALUE = "less";
 
   @Override
   public void define(Context context) {
     context.addExtensions(
       CssLanguage.class,
-      CssSquidSensor.class,
+      LessLanguage.class,
+      CssAnalyzerSensor.class,
+      LessAnalyzerSensor.class,
       CssProfile.class,
-      CssRulesDefinition.class);
+      LessProfile.class,
+      CssRulesDefinition.class,
+      LessRulesDefinition.class);
   }
 
 }

@@ -26,7 +26,7 @@ public class ImportNumberTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ImportNumberCheck(), CheckTestUtils.getTestFile("importThreshold.css"));
+    CssCheckVerifier.verify(new ImportNumberCheck(), CheckTestUtils.getCssTestFile("importThreshold.css"));
   }
 
 }

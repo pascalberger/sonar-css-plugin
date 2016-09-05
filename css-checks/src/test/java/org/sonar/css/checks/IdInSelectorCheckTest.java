@@ -26,7 +26,7 @@ public class IdInSelectorCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new IdInSelectorCheck(), CheckTestUtils.getTestFile("idsinselector.css"));
+    CssCheckVerifier.verify(new IdInSelectorCheck(), CheckTestUtils.getCssTestFile("idsinselector.css"));
   }
 
 }

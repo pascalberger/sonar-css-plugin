@@ -26,7 +26,7 @@ public class ExperimentalAtRuleCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new ExperimentalAtRuleCheck(), CheckTestUtils.getTestFile("experimentalAtRuleUsage.css"));
+    CssCheckVerifier.verify(new ExperimentalAtRuleCheck(), CheckTestUtils.getCssTestFile("experimentalAtRuleUsage.css"));
   }
 
 }

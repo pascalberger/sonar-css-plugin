@@ -26,7 +26,7 @@ public class DoNotUseShorthandPropertyCheckTest {
 
   @Test
   public void test() {
-    CssCheckVerifier.verify(new DoNotUseShorthandPropertyCheck(), CheckTestUtils.getTestFile("doNotUseShorthandProperties.css"));
+    CssCheckVerifier.verify(new DoNotUseShorthandPropertyCheck(), CheckTestUtils.getCssTestFile("doNotUseShorthandProperties.css"));
   }
 
 }
